@@ -1,0 +1,23 @@
+CREATE DATABASE person2
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+-----------------------------
+-- Table: public.Persons
+
+-- DROP TABLE public."Persons";
+
+CREATE TABLE public."Persons"
+(
+    "PersonId" integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+    "Name" text COLLATE pg_catalog."default",
+    "Address" text COLLATE pg_catalog."default",
+    "Phone" text COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."Persons"
+    OWNER to postgres;
