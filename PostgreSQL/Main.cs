@@ -25,7 +25,7 @@ namespace PostgreSQL
                 var persons = personDbContext.Persons.Select(s => s.Name).ToList();
                 lstNames.DataSource = persons;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("An error has occurred");
             }
